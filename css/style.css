@@ -1,0 +1,28 @@
+html {
+  margin: 0px;
+}
+
+body {
+  margin: 0px;
+  background: #fff0e5;
+}
+
+.head {
+  height: 56px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.search {
+  padding: 0px;
+  box-shadow: none;
+  cursor: pointer;
+  border-color: transparent;
+  background: transparent;
+}
+
+.head-text {
+  color: black;
+}
