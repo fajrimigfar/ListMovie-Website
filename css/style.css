@@ -7,18 +7,25 @@
   line-height: 1.5;
 }
 
-.opening {
-  min-height: 100vh;
+.cover {
   width: 100%;
   background: url("../images/sakura.gif"),
     linear-gradient(to bottom, #00bfd8 0%, #c1f8ff 100%);
   position: relative;
   background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed;
+}
+
+.opening {
+  min-height: 100vh;
+  width: 100%;
+  background-image: url("../images/branch0.png");
+  background-position: right;
+  background-repeat: no-repeat;
 }
 .header {
   width: 100%;
-  position: fixed;
 }
 
 .head-decor {
@@ -66,14 +73,15 @@
   color: black;
 }
 
-.textbox {
+/* .textbox {
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
+} */
 
 .subject {
   padding-left: 15%;
+  padding-top: 10%;
 }
 
 .bigtext {
@@ -123,9 +131,9 @@
   min-height: 100vh;
   padding: 0 10rem;
   position: relative;
-  /* background: url("../images/branch1.png") left no-repeat,
-    url("../images/branch0.png") 100% 100% no-repeat,
-    linear-gradient(to bottom, #c1f8ff 0%, #ffffff 100%); */
+  background: url("../images/branch1.png") left no-repeat,
+    url("../images/branch0.png") 100% 100% no-repeat;
+  /* linear-gradient(to bottom, #c1f8ff 0%, #ffffff 100%); */
 }
 .list {
   padding-top: 4%;
@@ -148,9 +156,10 @@
   margin: 30px;
 }
 
-/* .wibubox:hover {
-  animation: mymove 5s infinite;
-} */
+.wibubox:hover {
+  box-shadow: -10px 8px rgba(0, 152, 170, 255);
+  /* animation: mymove 5s infinite; */
+}
 
 .wibuimg {
   width: 300px;
