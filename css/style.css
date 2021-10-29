@@ -5,6 +5,7 @@
   font-family: "Poppins", sans-serif;
   font-weight: 400;
   line-height: 1.5;
+  scroll-behavior: smooth;
 }
 
 .cover {
@@ -15,6 +16,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+  overflow-x: hidden;
 }
 
 .opening {
@@ -23,6 +25,7 @@
   background-image: url("../images/branch0.png");
   background-position: right;
   background-repeat: no-repeat;
+  overflow-x: hidden;
 }
 .header {
   width: 100%;
@@ -65,11 +68,13 @@
 
 .others {
   color: white;
+  border-radius: 15px;
+  background-color: transparent;
+  transition: background-color 300ms ease, color 300ms ease;
 }
 
 .others:hover {
   background-color: white;
-  border-radius: 15px;
   color: black;
 }
 
@@ -117,6 +122,7 @@
   border-radius: 20px;
   background-color: rgba(0, 152, 170, 255);
   text-decoration: none;
+  transition: background-color 200ms ease;
 }
 
 .discover:hover {
@@ -133,6 +139,7 @@
   position: relative;
   background: url("../images/branch1.png") left no-repeat,
     url("../images/branch0.png") 100% 100% no-repeat;
+  overflow-x: hidden;
   /* linear-gradient(to bottom, #c1f8ff 0%, #ffffff 100%); */
 }
 .list {
@@ -154,11 +161,18 @@
   padding: 5px;
   display: inline-block;
   margin: 30px;
+  transition: box-shadow 200ms ease, transform 200ms ease;
+}
+
+.buttonimg {
+  cursor: pointer;
+  border: 2px solid black;
+  background-color: transparent;
 }
 
 .wibubox:hover {
-  box-shadow: -10px 8px rgba(0, 152, 170, 255);
-  /* animation: mymove 5s infinite; */
+  box-shadow: -10px 8px #0096a9;
+  transform: translate(10px, -8px);
 }
 
 .wibuimg {
@@ -171,6 +185,69 @@
   font-size: 20px;
   display: inline-block;
   color: black;
+  border: none;
+  background-color: transparent;
+  display: block;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: 200ms ease-in-out;
+  background-color: white;
+  border-radius: 4px;
+  z-index: 10;
+  min-width: 47%;
+  padding: 10px 15px;
+}
+
+.modal.active {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.close-button {
+  color: white;
+  background-color: #181818;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  border: none;
+  cursor: pointer;
+}
+
+.close-button div {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.5rem;
+}
+
+#overlay {
+  position: fixed;
+  opacity: 0;
+  transition: 200ms ease-in-out;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+}
+
+#overlay.active {
+  opacity: 1;
+  pointer-events: all;
 }
 
 .closing {
